@@ -1,0 +1,40 @@
+Function (ScheduleScrims)
+{
+var spreadsheet = SpreadsheetApp.getActiveSheet();
+var calendarId = spreadsheet.getRange ("F4").getValue(); 
+/*z tej komórki bierzemy info o ID*/
+var eventCal = CalendarApp.getCalendarById(CalendarId); 
+/*smk1i7eeqgsjkqs0s53hgvo844@group.calendar.google.com */
+
+var signups = spreadsheet.getRange("A6:F10").getVaules();
+eventCal.createEvent(volunteer, startTime, endTime);
+
+
+/** [13/05/2022 00:00:00	13/05/2022 18:00:00	Scrim vs BeKind			3 maps Villa kafe Theme]
+    [14/05/2022 00:00:00	13/05/2022 18:00:00	Scrim vs BeKind			3 maps Villa kafe Theme]
+    [15/05/2022 00:00:00	13/05/2022 18:00:00	Scrim vs BeKind			3 maps Villa kafe Theme]
+    [16/05/2022 00:00:00	13/05/2022 18:00:00	Scrim vs BeKind			3 maps Villa kafe Theme]
+    [17/05/2022 00:00:00	13/05/2022 18:00:00	Scrim vs BeKind			3 maps Villa kafe Theme] **/
+
+/** make it that everyone can use it **/
+
+for (x=0; x<signups.length; x++) {
+
+var shift = signups[x];
+
+var startDate = shift[0];
+var startTime = shift[1];
+var subject = shift[2];
+var description = shift[3];
+
+createEvent(startDate, startTime, subject, description);
+
+  }
+}
+
+function onOpen() {
+  var ui = SpreadsheetApp.getUI();
+  ui.CreateMenu('Sync to Calendar')
+  .addItem('Schedule shifts now', 'ScheduleScrims')
+  .addToUi();
+}
