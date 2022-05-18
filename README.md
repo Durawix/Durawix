@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Durawix
 - 👀 I’m interested in football, e-sports.
-- 🌱 I’m currently learning MySQL
+- 🌱 I’m currently learning some basics in programming (MySQL, Python) etc.
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me: durawix.2k@gmail.com
 
